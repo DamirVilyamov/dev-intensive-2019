@@ -85,8 +85,8 @@ class ExampleUnitTest {
 
         when (imageMessage) {
             is BaseMessage -> println("FUCK! This is a base message!")
-            is TextMessage -> println("FUCK! This is a text message!".truncate())
-            is ImageMessage -> println("FUCK! This is an image message!".truncate(12))
+            is TextMessage -> println("FUCK! This is a text message!")
+            is ImageMessage -> println("FUCK! This is an image message!")
 
         }
         println(textMessage.formatMessage())
