@@ -15,10 +15,10 @@ data class User(
 
 ) {
 
-    constructor(id: String, firstname: String?, lastname: String?) : this(
+    constructor(id: String, firstName: String?, lastName: String?) : this(
         id = id,
-        firstName = firstname,
-        lastName = lastname,
+        firstName = firstName,
+        lastName = lastName,
         avatar = null
     )
 
@@ -37,7 +37,7 @@ data class User(
         fun makeUser(fullName: String?): User {
             lastid++
             val (firstName, lastName) = Utils.parseFullName(fullName)
-            return User(id = "$lastid", firstname = firstName, lastname = lastName)
+            return User(id = "$lastid", firstName = firstName, lastName = lastName)
 
         }
     }
