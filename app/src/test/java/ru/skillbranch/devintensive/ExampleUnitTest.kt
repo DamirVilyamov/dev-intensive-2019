@@ -36,7 +36,7 @@ class ExampleUnitTest {
         //val user = User.makeUser("John Cena")
         //val user2 = User.makeUser("")
         val user = User.makeUser("John Wick")
-        val user2 = user.copy(id = "2", lastname = "Cena", lastVisit = Date())
+        val user2 = user.copy(id = "2", lastName = "Cena", lastVisit = Date())
         print("$user \n$user2")
     }
 
@@ -54,8 +54,8 @@ class ExampleUnitTest {
     fun test_copy() {
         val user = User.makeUser("John Wick")
         val user2 = user.copy(lastVisit = Date().add(-2, TimeUnits.SECOND))
-        val user3 = user.copy(lastname = "Cena", lastVisit = Date().add(3, TimeUnits.HOUR))
-        val user4 = user.copy(lastname = "Cena", lastVisit = Date())
+        val user3 = user.copy(lastName = "Cena", lastVisit = Date().add(3, TimeUnits.HOUR))
+        val user4 = user.copy(lastName = "Cena", lastVisit = Date())
 
         println(
             """
