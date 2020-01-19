@@ -66,6 +66,7 @@ class ExampleUnitTest {
             """.trimIndent()
         )
     }
+
     @Test
     fun test_data_mapping() {
         val user = User.makeUser("John Doe")
@@ -73,13 +74,16 @@ class ExampleUnitTest {
         val userView = user.toUserView()
         userView.printMe()
     }
+
     @Test
     fun test_abstract_factory() {
         val user = User.makeUser("John Doe")
-        val textMessage = BaseMessage.makeMessage(user, Chat("0"),payload = "any text message" , type = "text")
-        val imageMessage = BaseMessage.makeMessage(user, Chat("0"),payload = "any image url" , type = "image")
+        val textMessage =
+            BaseMessage.makeMessage(user, Chat("0"), payload = "any text message", type = "text")
+        val imageMessage =
+            BaseMessage.makeMessage(user, Chat("0"), payload = "any image url", type = "image")
 
-        when(imageMessage){
+        when (imageMessage) {
             is BaseMessage -> println("FUCK! This is a base message!")
             is TextMessage -> println("FUCK! This is a text message!".truncate())
             is ImageMessage -> println("FUCK! This is an image message!".truncate(12))

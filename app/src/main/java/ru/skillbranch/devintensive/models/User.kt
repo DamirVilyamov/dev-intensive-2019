@@ -5,7 +5,7 @@ import java.util.*
 
 data class User(
     val id: String,
-    var firstname: String?,
+    var firstName: String?,
     var lastname: String?,
     var avatar: String?,
     var rating: Int = 0,
@@ -17,7 +17,7 @@ data class User(
 
     constructor(id: String, firstname: String?, lastname: String?) : this(
         id = id,
-        firstname = firstname,
+        firstName = firstname,
         lastname = lastname,
         avatar = null
     )
@@ -27,7 +27,7 @@ data class User(
     init {
         println(
             "It's alive!!!\n" +
-                    "${if (lastname === "Doe") "His name is: $firstname $lastname" else "And his name is $firstname $lastname"}\n"
+                    "${if (lastname === "Doe") "His name is: $firstName $lastname" else "And his name is $firstName $lastname"}\n"
         )
     }
 
