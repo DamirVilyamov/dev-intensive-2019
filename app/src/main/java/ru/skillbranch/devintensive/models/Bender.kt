@@ -12,11 +12,11 @@ class Bender(var status: Status = Status.NORMAL, var question: Question = Questi
 
     fun listenAnswer(answer: String): Pair<String, Triple<Int, Int, Int>> {
         return if (question.answers.contains(answer)) {
-           question = question.nextQuestion()
+            question = question.nextQuestion()
             "Отлично - это правильный ответ!\n${question.question}" to status.color
-        } else{
+        } else {
             status = status.nextStatus()
-        "Это не правильный ответ!\n${question.question}" to status.color
+            "Это не правильный ответ!\n${question.question}" to status.color
         }
     }
 
@@ -36,26 +36,26 @@ class Bender(var status: Status = Status.NORMAL, var question: Question = Questi
     }
 
     enum class Question(val question: String, val answers: List<String>) {
-        NAME("Как меня зовут?", listOf("бендер", "bender")){
+        NAME("Как меня зовут?", listOf("бендер", "bender")) {
             override fun nextQuestion(): Question = PROFESSION
         },
-        PROFESSION("Назови мою профессию", listOf("сгибальщик", "bender")){
+        PROFESSION("Назови мою профессию", listOf("сгибальщик", "bender")) {
             override fun nextQuestion(): Question = MATERIAL
         },
-        MATERIAL("из чего я сделан?", listOf("метал", "дерево", "metal", "iron", "wood")){
+        MATERIAL("из чего я сделан?", listOf("метал", "дерево", "metal", "iron", "wood")) {
             override fun nextQuestion(): Question = BDAY
         },
-        BDAY("Когда меня создали?", listOf("2993")){
+        BDAY("Когда меня создали?", listOf("2993")) {
             override fun nextQuestion(): Question = SERIAL
         },
-        SERIAL("Мой серийный номер?", listOf("2716057")){
+        SERIAL("Мой серийный номер?", listOf("2716057")) {
             override fun nextQuestion(): Question = IDLE
         },
-        IDLE("На этом всё, вопросов больше нет", listOf()){
+        IDLE("На этом всё, вопросов больше нет", listOf()) {
             override fun nextQuestion(): Question = IDLE
         };
 
-        abstract fun nextQuestion():Question
+        abstract fun nextQuestion(): Question
 
     }
 }
